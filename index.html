@@ -6,1011 +6,889 @@
     <title>Formaum | get clarity.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --primary: #3b9ddd;
-            --primary-dark: #1a5fb4;
-            --bg-dark: #0a0a0a;
-            --bg-card: #111111;
-            --bg-card-hover: #161616;
-            --text-primary: #ffffff;
-            --text-secondary: #888888;
-            --text-muted: #555555;
-            --border: #1a1a1a;
-            --glow: rgba(59, 157, 221, 0.15);
+            /* Blues */
+            --navy-deep: #0D1B2A;
+            --navy: #1B2D45;
+            --navy-mid: #243B55;
+            --slate: #34506B;
+            --blue-accent: #4A8FD4;
+            --blue-light: #6AADDD;
+
+            /* Warm whites */
+            --warm-white: #FAF9F6;
+            --cream: #F3F1EC;
+            --ice: #EDF2F8;
+            --ice-blue: #E4EBF5;
+
+            /* Text */
+            --text-dark: #0D1B2A;
+            --text-body: #2A3E55;
+            --text-muted: #6B819A;
+            --text-light: #F0EDE8;
+            --text-light-muted: rgba(240, 237, 232, 0.6);
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-primary);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            color: var(--text-dark);
             line-height: 1.6;
-            overflow-x: hidden;
+            background: var(--warm-white);
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Typography */
-        h1, h2, h3, h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 600;
-            letter-spacing: -0.02em;
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            line-height: 1.15;
         }
 
-        /* Navigation */
+        /* ── NAV ── */
         nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             z-index: 1000;
-            padding: 20px 40px;
+            padding: 20px 48px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
+            background: rgba(13, 27, 42, 0.92);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
         }
 
         .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 24px;
-            font-weight: 600;
-            color: var(--text-primary);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--text-light);
             text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-right {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 28px;
         }
 
-        .logo-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--primary);
-            border-radius: 50%;
+        .nav-link {
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--text-light-muted);
+            text-decoration: none;
+            transition: color 0.3s;
         }
+        .nav-link:hover { color: var(--text-light); }
 
         .nav-cta {
-            background: var(--primary);
-            color: var(--text-primary);
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
             font-weight: 500;
-            font-size: 14px;
-            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--navy-deep);
+            background: var(--blue-accent);
+            padding: 10px 22px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .nav-cta:hover { background: var(--blue-light); }
+
+        /* ── SECTIONS ── */
+        .section-dark {
+            background: var(--navy-deep);
+            color: var(--text-light);
+            padding: 100px 48px;
+        }
+        .section-dark h2, .section-dark h3 { color: var(--text-light); }
+        .section-dark p { color: rgba(240, 237, 232, 0.85); }
+
+        .section-navy {
+            background: var(--navy);
+            color: var(--text-light);
+            padding: 100px 48px;
+        }
+        .section-navy h2, .section-navy h3 { color: var(--text-light); }
+        .section-navy p { color: rgba(240, 237, 232, 0.85); }
+
+        .section-white {
+            background: var(--warm-white);
+            padding: 100px 48px;
         }
 
-        .nav-cta:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
+        .section-cream {
+            background: var(--cream);
+            padding: 100px 48px;
         }
 
-        /* Sections */
-        section {
-            padding: 120px 40px;
-            max-width: 1200px;
+        .section-ice {
+            background: var(--ice);
+            padding: 100px 48px;
+        }
+
+        .inner {
+            max-width: 960px;
             margin: 0 auto;
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
+        section {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
         section.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Hero */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            padding-top: 100px;
-            opacity: 1;
-            transform: none;
+        /* ── LABELS ── */
+        .label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--blue-accent);
+            margin-bottom: 14px;
+            font-weight: 500;
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
+        .section-dark .label,
+        .section-navy .label { color: var(--blue-light); }
+
+        .section-title {
+            font-size: clamp(28px, 4vw, 44px);
+            margin-bottom: 24px;
+        }
+
+        .section-sub {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-body);
+            max-width: 600px;
+            margin-bottom: 48px;
+        }
+
+        .section-dark .section-sub,
+        .section-navy .section-sub {
+            color: rgba(240, 237, 232, 0.7);
+        }
+
+        /* ── HERO ── */
+        .hero-wrap {
+            background: var(--navy-deep);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 48px 100px;
+        }
+
+        .hero {
+            max-width: 960px;
+            margin: 0 auto;
+            width: 100%;
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        .hero-tagline {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            color: var(--blue-accent);
+            text-transform: uppercase;
+            margin-bottom: 28px;
         }
 
         .hero h1 {
-            font-size: clamp(48px, 10vw, 96px);
-            font-weight: 600;
-            margin-bottom: 24px;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: clamp(36px, 5.5vw, 64px);
+            line-height: 1.08;
+            margin-bottom: 32px;
+            max-width: 700px;
+            color: var(--text-light);
         }
 
-        .hero p {
-            font-size: clamp(18px, 2.5vw, 24px);
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 48px;
+        .hero-sub {
+            font-size: 17px;
             font-weight: 300;
+            color: rgba(240, 237, 232, 0.7);
+            line-height: 1.75;
+            max-width: 520px;
+            margin-bottom: 44px;
         }
 
         .hero-ctas {
             display: flex;
             gap: 16px;
-            justify-content: center;
+            align-items: center;
             flex-wrap: wrap;
         }
 
         .btn-primary {
-            background: var(--primary);
-            color: var(--text-primary);
-            padding: 16px 32px;
-            border-radius: 8px;
-            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
             font-weight: 500;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px var(--glow);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-primary);
-            padding: 16px 32px;
-            border-radius: 8px;
+            color: var(--navy-deep);
+            background: var(--blue-accent);
+            padding: 14px 30px;
+            border-radius: 4px;
             text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        .btn-primary:hover { background: var(--blue-light); transform: translateY(-1px); }
+
+        .btn-outline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
             font-weight: 500;
-            font-size: 16px;
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
+            color: var(--text-light-muted);
+            padding: 14px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: all 0.3s;
+            display: inline-block;
         }
+        .btn-outline:hover { border-color: var(--blue-accent); color: var(--text-light); }
 
-        .btn-secondary:hover {
-            border-color: var(--primary);
-            background: rgba(59, 157, 221, 0.1);
+        /* On light backgrounds */
+        .btn-primary-light {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            color: #fff;
+            background: var(--navy);
+            padding: 14px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
         }
+        .btn-primary-light:hover { background: var(--navy-mid); transform: translateY(-1px); }
 
-        /* Floating Elements */
-        .floating-elements {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+        /* ── METRICS ── */
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
             overflow: hidden;
-            pointer-events: none;
+            margin-top: 72px;
         }
 
-        .float-shape {
-            position: absolute;
-            border-radius: 16px;
-            background: var(--primary);
-            opacity: 0.1;
-            animation: float 20s ease-in-out infinite;
-        }
-
-        .float-shape:nth-child(1) {
-            width: 120px;
-            height: 120px;
-            top: 15%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .float-shape:nth-child(2) {
-            width: 80px;
-            height: 80px;
-            top: 25%;
-            right: 15%;
-            opacity: 0.15;
-            animation-delay: -5s;
-        }
-
-        .float-shape:nth-child(3) {
-            width: 60px;
-            height: 60px;
-            bottom: 30%;
-            left: 20%;
-            opacity: 0.08;
-            animation-delay: -10s;
-        }
-
-        .float-shape:nth-child(4) {
-            width: 100px;
-            height: 100px;
-            bottom: 20%;
-            right: 10%;
-            opacity: 0.12;
-            animation-delay: -15s;
-        }
-
-        .float-shape:nth-child(5) {
-            width: 40px;
-            height: 40px;
-            top: 40%;
-            left: 5%;
-            opacity: 0.2;
-            animation-delay: -7s;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-            25% {
-                transform: translateY(-20px) rotate(5deg);
-            }
-            50% {
-                transform: translateY(0) rotate(0deg);
-            }
-            75% {
-                transform: translateY(20px) rotate(-5deg);
-            }
-        }
-
-        /* What We Do */
-        .section-label {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--primary);
-            margin-bottom: 16px;
-        }
-
-        .section-title {
-            font-size: clamp(32px, 5vw, 48px);
-            margin-bottom: 60px;
-        }
-
-        .two-column {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-        }
-
-        .service-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 48px;
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-4px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-        }
-
-        .service-card h3 {
-            font-size: 24px;
-            margin-bottom: 16px;
-            color: var(--text-primary);
-        }
-
-        .service-card p {
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-            font-size: 16px;
-            line-height: 1.7;
-        }
-
-        .service-specs {
-            display: flex;
-            gap: 24px;
-            padding-top: 24px;
-            border-top: 1px solid var(--border);
-        }
-
-        .spec {
+        .metric {
+            background: var(--navy);
+            padding: 28px 20px;
             text-align: center;
         }
 
-        .spec-value {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 20px;
+        .metric-val {
+            font-size: 26px;
             font-weight: 600;
-            color: var(--primary);
+            color: var(--text-light);
+            display: block;
+            margin-bottom: 6px;
         }
 
-        .spec-label {
-            font-size: 12px;
-            color: var(--text-muted);
+        .metric-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            color: var(--text-light-muted);
             text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Who We Work With */
-        .audience-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .audience-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 32px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .audience-card:hover {
-            border-color: var(--primary);
-            background: var(--bg-card-hover);
-        }
-
-        .audience-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--glow);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-        }
-
-        .audience-icon svg {
-            width: 24px;
-            height: 24px;
-            stroke: var(--primary);
-        }
-
-        .audience-card h4 {
-            font-size: 16px;
-            font-weight: 500;
-            color: var(--text-primary);
+            letter-spacing: 0.8px;
             line-height: 1.5;
         }
 
-        /* How It Works */
-        .timeline {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            position: relative;
+        /* ── CARDS ── */
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+        .card {
+            border: 1px solid rgba(13, 27, 42, 0.08);
+            border-radius: 10px;
+            padding: 36px 30px;
+            background: #fff;
+            transition: all 0.3s;
+        }
+        .card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(13, 27, 42, 0.06); }
+
+        .card-dark {
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px;
+            padding: 36px 30px;
+            background: rgba(255,255,255,0.04);
+            transition: all 0.3s;
+        }
+        .card-dark:hover { background: rgba(255,255,255,0.07); }
+
+        .card h3 {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 12px;
         }
 
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 40px;
-            left: 80px;
-            right: 80px;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
-            opacity: 0.3;
+        .card > p, .card-dark > p {
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 24px;
         }
 
-        .timeline-step {
-            text-align: center;
-            position: relative;
+        /* Service specs */
+        .specs {
+            display: flex;
+            gap: 20px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(13, 27, 42, 0.06);
         }
+        .section-dark .specs,
+        .section-navy .specs { border-top-color: rgba(255,255,255,0.08); }
 
-        .step-number {
-            width: 80px;
-            height: 80px;
-            background: var(--bg-card);
-            border: 2px solid var(--primary);
-            border-radius: 50%;
+        .spec-val {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--blue-accent);
+        }
+        .spec-lbl {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 9px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        .section-dark .spec-val { color: var(--blue-light); }
+        .section-dark .spec-lbl { color: var(--text-light-muted); }
+
+        /* Audience */
+        .aud-icon {
+            width: 40px; height: 40px;
+            background: var(--ice-blue);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 24px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 28px;
-            font-weight: 600;
-            color: var(--primary);
-            position: relative;
-            z-index: 2;
-        }
-
-        .timeline-step h4 {
-            font-size: 20px;
-            margin-bottom: 12px;
-        }
-
-        .timeline-step p {
-            color: var(--text-secondary);
-            font-size: 15px;
-        }
-
-        /* Case Studies */
-        .case-studies-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .case-studies-grid.six-up {
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(2, auto);
-        }
-
-        .case-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 32px;
-            transition: all 0.3s ease;
-        }
-
-        .case-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-4px);
-        }
-
-        .case-tag {
-            display: inline-block;
-            background: var(--glow);
-            color: var(--primary);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 500;
             margin-bottom: 16px;
         }
+        .aud-icon svg { width: 20px; height: 20px; stroke: var(--blue-accent); }
 
-        .case-card h4 {
-            font-size: 18px;
-            margin-bottom: 12px;
-            line-height: 1.4;
+        .card h4 {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-body);
+            line-height: 1.6;
         }
 
-        .case-card p {
-            color: var(--text-secondary);
+        /* Steps */
+        .step-num {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 28px;
+            font-weight: 500;
+            color: var(--blue-accent);
+            margin-bottom: 14px;
+            opacity: 0.5;
+        }
+        .section-dark .step-num { color: var(--blue-light); opacity: 0.4; }
+
+        .card-dark h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .card-dark p {
             font-size: 14px;
-            margin-bottom: 24px;
+            color: rgba(240, 237, 232, 0.7);
+            line-height: 1.65;
+        }
+
+        /* Cases */
+        .case-tag {
+            font-family: 'IBM Plex Mono', monospace;
+            display: inline-block;
+            background: var(--ice-blue);
+            color: var(--slate);
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 14px;
+        }
+
+        .case-card h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 10px;
         }
 
         .case-stats {
             display: flex;
-            gap: 20px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
+            gap: 24px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(13, 27, 42, 0.06);
         }
-
-        .case-stat {
-            flex: 1;
-        }
-
-        .stat-number {
-            font-family: 'Space Grotesk', sans-serif;
+        .case-stat { flex: 1; }
+        .case-stat .cs-val {
             font-size: 24px;
             font-weight: 600;
-            color: var(--primary);
+            color: var(--text-dark);
             display: block;
+            margin-bottom: 4px;
         }
-
-        .stat-label {
-            font-size: 11px;
+        .case-stat .cs-lbl {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 9px;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        /* Tools Banner */
-        .tools-section {
-            background: var(--bg-card);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            padding: 60px 40px;
+        /* Tools */
+        .tools-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
             text-align: center;
         }
-
-        .tools-section p {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--text-muted);
-            margin-bottom: 32px;
-        }
-
-        .tools-logos {
+        .tools-row {
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 48px;
+            gap: 36px;
             flex-wrap: wrap;
-            opacity: 0.6;
         }
-
-        .tool-logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 18px;
-            font-weight: 500;
-            color: var(--text-secondary);
-        }
-
-        /* CTA Section */
-        .cta-section {
-            text-align: center;
-            padding: 160px 40px;
-        }
-
-        .cta-section h2 {
-            font-size: clamp(40px, 6vw, 64px);
-            margin-bottom: 24px;
-        }
-
-        .cta-section > p {
-            color: var(--text-secondary);
-            font-size: 18px;
-            margin-bottom: 48px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-section .btn-primary {
-            padding: 20px 48px;
-            font-size: 18px;
-        }
-
-        .founder-info {
-            margin-top: 48px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .founder-name {
-            font-weight: 500;
-            color: var(--text-primary);
-        }
-
-        .founder-title {
-            font-size: 14px;
+        .tools-row span {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 13px;
             color: var(--text-muted);
         }
 
-        .founder-link {
-            color: var(--primary);
-            text-decoration: none;
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid rgba(13, 27, 42, 0.06);
+            padding: 22px 0;
+        }
+        .faq-item:first-child { border-top: 1px solid rgba(13, 27, 42, 0.06); }
+        .faq-q {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+        .faq-q span {
+            color: var(--blue-accent);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 13px;
+            margin-right: 8px;
+        }
+        .faq-a {
             font-size: 14px;
-            transition: opacity 0.3s;
+            color: var(--text-body);
+            line-height: 1.7;
+            padding-left: 28px;
         }
 
-        .founder-link:hover {
-            opacity: 0.8;
+        /* Founder */
+        .founder-ghost {
+            font-size: clamp(40px, 7vw, 80px);
+            font-weight: 300;
+            color: rgba(13, 27, 42, 0.04);
+            line-height: 1;
+            white-space: nowrap;
+            margin-bottom: 20px;
         }
+        .founder-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .f-name { font-weight: 600; font-size: 16px; }
+        .f-title { font-size: 13px; color: var(--text-muted); }
+        .f-badge {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--blue-accent);
+            border: 1px solid var(--ice-blue);
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+        .f-link {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .f-link:hover { color: var(--blue-accent); }
 
         /* Footer */
-        footer {
-            padding: 40px;
-            text-align: center;
-            border-top: 1px solid var(--border);
+        .footer-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 32px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-
-        footer p {
-            color: var(--text-muted);
-            font-size: 14px;
+        .footer-inner p { font-size: 12px; color: var(--text-light-muted); margin: 0; }
+        .footer-inner a {
+            font-size: 12px;
+            color: var(--text-light-muted);
+            text-decoration: none;
+            transition: color 0.3s;
         }
+        .footer-inner a:hover { color: var(--blue-light); }
 
-        /* Responsive */
+        /* ── RESPONSIVE ── */
         @media (max-width: 900px) {
-            nav {
-                padding: 16px 24px;
-            }
-
-            section {
-                padding: 80px 24px;
-            }
-
-            .two-column,
-            .timeline,
-            .case-studies-grid,
-            .audience-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline::before {
-                display: none;
-            }
-
-            .service-specs {
-                flex-wrap: wrap;
-            }
-
-            .case-stats {
-                flex-wrap: wrap;
-            }
-
-            .tools-logos {
-                gap: 32px;
-            }
+            nav { padding: 16px 24px; }
+            .hero-wrap, .section-dark, .section-navy, .section-white, .section-cream, .section-ice { padding-left: 24px; padding-right: 24px; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .metrics { grid-template-columns: repeat(2, 1fr); }
+            .hero-ctas { flex-direction: column; align-items: flex-start; }
+            .footer-inner { flex-direction: column; gap: 12px; }
         }
 
         @media (max-width: 600px) {
-            .hero-ctas {
-                flex-direction: column;
-                width: 100%;
-                padding: 0 20px;
-            }
-
-            .btn-primary, .btn-secondary {
-                width: 100%;
-                text-align: center;
-            }
-
-            .service-card {
-                padding: 32px 24px;
-            }
+            .nav-right .nav-link { display: none; }
+            .hero h1 { font-size: 32px; }
+            .metrics { grid-template-columns: 1fr; }
+            .card, .card-dark { padding: 24px 20px; }
         }
 
-        /* Animations for stats */
-        .animate-number {
-            display: inline-block;
-        }
+        .animate-number { display: inline-block; }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+
     <nav>
-        <a href="#" class="logo">
-            formaum<span class="logo-dot"></span>
-        </a>
-        <a href="https://cal.com/formaum/30min" class="nav-cta" target="_blank">Book a Call</a>
+        <a href="#" class="logo">Formaum</a>
+        <div class="nav-right">
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#work" class="nav-link">Work</a>
+            <a href="#faq" class="nav-link">FAQ</a>
+            <a href="https://cal.com/formaum/30min" class="nav-cta" target="_blank">Book a Call</a>
+        </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="floating-elements">
-            <div class="float-shape"></div>
-            <div class="float-shape"></div>
-            <div class="float-shape"></div>
-            <div class="float-shape"></div>
-            <div class="float-shape"></div>
-        </div>
-        <div class="hero-content">
-            <h1>get clarity.</h1>
-            <p>I build MVPs and AI automation ecosystems for founders who are ready to ship.</p>
+    <!-- ════ HERO ════ -->
+    <div class="hero-wrap">
+        <section class="hero">
+            <span class="hero-tagline">get clarity.</span>
+            <h1>Restructure how your business operates</h1>
+            <p class="hero-sub">I build the operations infrastructure that lets multi-location businesses stop firefighting and start scaling. Custom systems, AI automation, and the project management rigor of someone who ran $100M productions.</p>
             <div class="hero-ctas">
-                <a href="https://cal.com/formaum/30min" class="btn-primary" target="_blank">Book a Call</a>
-                <a href="#work" class="btn-secondary">See My Work</a>
+                <a href="https://cal.com/formaum/30min" class="btn-primary" target="_blank">Book a Discovery Call</a>
+                <a href="#work" class="btn-outline">See My Work</a>
             </div>
-        </div>
-    </section>
+            <div class="metrics">
+                <div class="metric">
+                    <span class="metric-val animate-number" data-target="99" data-suffix="%">0%</span>
+                    <span class="metric-label">Follow-up<br>accuracy</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-val">5-10 hrs</span>
+                    <span class="metric-label">Saved weekly<br>per person</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-val">$0</span>
+                    <span class="metric-label">Dropped leads<br>after go-live</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-val">24/7</span>
+                    <span class="metric-label">Systems running<br>while you sleep</span>
+                </div>
+            </div>
+        </section>
+    </div>
 
-    <!-- What We Do -->
-    <section id="services">
-        <span class="section-label">What I Do</span>
-        <h2 class="section-title">Two ways to work with me</h2>
-        <div class="two-column">
-            <div class="service-card">
-                <h3>MVPs for Non-Technical Founders</h3>
-                <p>You bring the idea and customers, I build the product. Weekly demos, iterative feedback, stay involved through launch. Not a code-and-run situation.</p>
-                <div class="service-specs">
-                    <div class="spec">
-                        <div class="spec-value">From $15K</div>
-                        <div class="spec-label">Starting</div>
+    <!-- ════ SERVICES ════ -->
+    <div class="section-white">
+        <div class="inner">
+            <section id="services">
+                <div class="label">01 &mdash; Services</div>
+                <h2 class="section-title">Two ways to work together</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>MVPs for Non-Technical Founders</h3>
+                        <p>You bring the idea and customers, I build the product. Weekly demos, iterative feedback, stay involved through launch. Not a code-and-run situation.</p>
+                        <div class="specs">
+                            <div><div class="spec-val">From $15K</div><div class="spec-lbl">Starting</div></div>
+                            <div><div class="spec-val">6-10 wks</div><div class="spec-lbl">Timeline</div></div>
+                            <div><div class="spec-val">100%</div><div class="spec-lbl">Your IP</div></div>
+                        </div>
                     </div>
-                    <div class="spec">
-                        <div class="spec-value">6-10 wks</div>
-                        <div class="spec-label">Timeline</div>
-                    </div>
-                    <div class="spec">
-                        <div class="spec-value">100%</div>
-                        <div class="spec-label">IP you own it</div>
-                    </div>
-                </div>
-            </div>
-            <div class="service-card">
-                <h3>AI Automation Ecosystems</h3>
-                <p>I don't just build automations — I build ecosystems. Connected systems that talk to each other, learn from your data, and scale with your business. Your backend, running itself.</p>
-                <div class="service-specs">
-                    <div class="spec">
-                        <div class="spec-value">5-10 hrs</div>
-                        <div class="spec-label">Saved weekly</div>
-                    </div>
-                    <div class="spec">
-                        <div class="spec-value">24/7</div>
-                        <div class="spec-label">Always on</div>
-                    </div>
-                    <div class="spec">
-                        <div class="spec-value">Zero</div>
-                        <div class="spec-label">Dropped leads</div>
+                    <div class="card">
+                        <h3>AI Automation Ecosystems</h3>
+                        <p>Connected systems that talk to each other, learn from your data, and scale with your business. Your backend, running itself.</p>
+                        <div class="specs">
+                            <div><div class="spec-val">5-10 hrs</div><div class="spec-lbl">Saved weekly</div></div>
+                            <div><div class="spec-val">24/7</div><div class="spec-lbl">Always on</div></div>
+                            <div><div class="spec-val">Zero</div><div class="spec-lbl">Dropped leads</div></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Who We Work With -->
-    <section>
-        <span class="section-label">Who I Work With</span>
-        <h2 class="section-title">Built for builders</h2>
-        <div class="audience-grid">
-            <div class="audience-card">
-                <div class="audience-icon">
-                    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                    </svg>
-                </div>
-                <h4>Founders with ideas and customers, but no technical co-founder</h4>
-            </div>
-            <div class="audience-card">
-                <div class="audience-icon">
-                    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
-                    </svg>
-                </div>
-                <h4>Consultants drowning in call notes and CRM updates</h4>
-            </div>
-            <div class="audience-card">
-                <div class="audience-icon">
-                    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                </div>
-                <h4>Businesses losing leads to slow follow-up</h4>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section>
-        <span class="section-label">How It Works</span>
-        <h2 class="section-title">Simple process. Clear outcomes.</h2>
-        <div class="timeline">
-            <div class="timeline-step">
-                <div class="step-number">1</div>
-                <h4>Discovery Call</h4>
-                <p>I learn your business, identify bottlenecks, and map the solution together. No pitch deck required.</p>
-            </div>
-            <div class="timeline-step">
-                <div class="step-number">2</div>
-                <h4>Scope & Plan</h4>
-                <p>Clear deliverables, timeline, and pricing. You know exactly what you're getting. No surprises.</p>
-            </div>
-            <div class="timeline-step">
-                <div class="step-number">3</div>
-                <h4>Build & Ship</h4>
-                <p>Weekly demos, iterative feedback, launch together. You're involved every step of the way.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Case Studies -->
-    <section id="work">
-        <span class="section-label">Recent Work</span>
-        <h2 class="section-title">What I've shipped</h2>
-        <div class="case-studies-grid six-up">
-            <div class="case-card">
-                <span class="case-tag">MVP Build</span>
-                <h4>Portfolio Intelligence Platform</h4>
-                <p>Angel investor tracking 12 portfolio companies from one dashboard. AI flags risks before they become problems.</p>
-                <div class="case-stats">
-                    <div class="case-stat">
-                        <span class="stat-number animate-number" data-target="8">0</span>
-                        <span class="stat-label">Weeks to launch</span>
-                    </div>
-                    <div class="case-stat">
-                        <span class="stat-number">$18K</span>
-                        <span class="stat-label">MRR</span>
-                    </div>
-                </div>
-            </div>
-            <div class="case-card">
-                <span class="case-tag">MVP Build</span>
-                <h4>Fulfillment Command Center</h4>
-                <p>Central AI brain unifying inventory, orders, and logistics. One screen to run the entire operation.</p>
-                <div class="case-stats">
-                    <div class="case-stat">
-                        <span class="stat-number animate-number" data-target="3">0</span>
-                        <span class="stat-label">Systems unified</span>
-                    </div>
-                    <div class="case-stat">
-                        <span class="stat-number animate-number" data-target="47" data-suffix="%">0%</span>
-                        <span class="stat-label">Faster decisions</span>
-                    </div>
-                </div>
-            </div>
-            <div class="case-card">
-                <span class="case-tag">AI Ecosystem</span>
-                <h4>Call Intelligence System</h4>
-                <p>Executive coach closing $500K/year in contracts. Now every call auto-transcribes, syncs to CRM, creates follow-ups.</p>
-                <div class="case-stats">
-                    <div class="case-stat">
-                        <span class="stat-number animate-number" data-target="12">0</span>
-                        <span class="stat-label">Hrs saved/week</span>
-                    </div>
-                    <div class="case-stat">
-                        <span class="stat-number animate-number" data-target="100" data-suffix="%">0%</span>
-                        <span class="stat-label">Follow-up rate</span>
-                    </div>
-                </div>
-            </div>
-            <div class="case-card">
-                <span class="case-tag">AI Ecosystem</span>
-                <h4>Lead Recovery Engine</h4>
-                <p>Med spa was losing $9K/month in missed rebookings. Automated follow-ups now capture every opportunity.</p>
-                <div class="case-stats">
-                    <div class="case-stat">
-                        <span class="stat-number">+$114K</span>
-                        <span class="stat-label">Annual revenue</span>
-                    </div>
-                    <div class="case-stat">
-                        <span class="stat-number animate-number" data-target="34" data-suffix="%">0%</span>
-                        <span class="stat-label">More rebookings</span>
-                    </div>
-                </div>
-            </div>
-            <div class="case-card">
-                <span class="case-tag">AI Ecosystem</span>
-                <h4>Catering Operations Hub</h4>
-                <p>$2M catering company drowning in quotes and event logistics. End-to-end automation from inquiry to invoice.</p>
-                <div class="case-stats">
-                    <div class="case-stat">
-                        <span class="stat-number animate-number" data-target="23" data-suffix="%">0%</span>
-                        <span class="stat-label">Revenue increase</span>
-                    </div>
-                    <div class="case-stat">
-                        <span class="stat-number animate-number" data-target="15">0</span>
-                        <span class="stat-label">Hrs saved/week</span>
-                    </div>
-                </div>
-            </div>
-            <div class="case-card">
-                <span class="case-tag">AI Ecosystem</span>
-                <h4>Fractional CMO Backend</h4>
-                <p>Marketing consultant managing 8 retainer clients. Zero dropped balls, zero missed check-ins, zero admin.</p>
-                <div class="case-stats">
-                    <div class="case-stat">
-                        <span class="stat-number animate-number" data-target="2">0</span>
-                        <span class="stat-label">New clients added</span>
-                    </div>
-                    <div class="case-stat">
-                        <span class="stat-number">$0</span>
-                        <span class="stat-label">Churn</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tools Banner -->
-    <div class="tools-section">
-        <p>Built with the tools that scale</p>
-        <div class="tools-logos">
-            <span class="tool-logo">n8n</span>
-            <span class="tool-logo">Make</span>
-            <span class="tool-logo">Supabase</span>
-            <span class="tool-logo">Next.js</span>
-            <span class="tool-logo">OpenAI</span>
-            <span class="tool-logo">Twilio</span>
-            <span class="tool-logo">Cal.com</span>
+            </section>
         </div>
     </div>
 
-    <!-- CTA -->
-    <section class="cta-section">
-        <h2>Ready to ship?</h2>
-        <p>No forms. No back-and-forth. Just book a time that works.</p>
-        <a href="https://cal.com/formaum/30min" class="btn-primary" target="_blank">Book a Discovery Call</a>
-        <div class="founder-info">
-            <span class="founder-name">Genevieve Claire</span>
-            <span class="founder-title">Founder</span>
-            <a href="https://linkedin.com/in/genevieveclaire" class="founder-link" target="_blank">LinkedIn &rarr;</a>
+    <!-- ════ AUDIENCE ════ -->
+    <div class="section-ice">
+        <div class="inner">
+            <section>
+                <div class="label">02 &mdash; Who I Work With</div>
+                <h2 class="section-title">Built for operators, not dreamers</h2>
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="aud-icon">
+                            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+                        </div>
+                        <h4>Founders with ideas and customers, but no technical co-founder</h4>
+                    </div>
+                    <div class="card">
+                        <div class="aud-icon">
+                            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg>
+                        </div>
+                        <h4>Consultants drowning in call notes and CRM updates</h4>
+                    </div>
+                    <div class="card">
+                        <div class="aud-icon">
+                            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <h4>Multi-location businesses losing leads to slow follow-up</h4>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Formaum. All rights reserved.</p>
-    </footer>
+    <!-- ════ PROCESS ════ -->
+    <div class="section-dark">
+        <div class="inner">
+            <section id="process">
+                <div class="label">03 &mdash; Process</div>
+                <h2 class="section-title">Simple process. Clear outcomes.</h2>
+                <div class="grid-3">
+                    <div class="card-dark">
+                        <div class="step-num">01</div>
+                        <h4>Discovery Call</h4>
+                        <p>I learn your business, identify bottlenecks, and map the solution together. No pitch deck required.</p>
+                    </div>
+                    <div class="card-dark">
+                        <div class="step-num">02</div>
+                        <h4>Scope & Plan</h4>
+                        <p>Clear deliverables, timeline, and pricing. You know exactly what you're getting. No surprises.</p>
+                    </div>
+                    <div class="card-dark">
+                        <div class="step-num">03</div>
+                        <h4>Build & Ship</h4>
+                        <p>Weekly demos, iterative feedback, launch together. You're involved every step of the way.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- ════ WORK ════ -->
+    <div class="section-cream">
+        <div class="inner">
+            <section id="work">
+                <div class="label">04 &mdash; Project Cases</div>
+                <h2 class="section-title">What I've shipped</h2>
+                <div class="grid-2">
+                    <div class="card case-card">
+                        <span class="case-tag">MVP Build</span>
+                        <h3>Portfolio Intelligence Platform</h3>
+                        <p>Angel investor tracking 12 portfolio companies from one dashboard. AI flags risks before they become problems.</p>
+                        <div class="case-stats">
+                            <div class="case-stat"><span class="cs-val animate-number" data-target="8">0</span><span class="cs-lbl">Weeks to launch</span></div>
+                            <div class="case-stat"><span class="cs-val">$18K</span><span class="cs-lbl">MRR</span></div>
+                        </div>
+                    </div>
+                    <div class="card case-card">
+                        <span class="case-tag">MVP Build</span>
+                        <h3>Fulfillment Command Center</h3>
+                        <p>Central AI brain unifying inventory, orders, and logistics. One screen to run the entire operation.</p>
+                        <div class="case-stats">
+                            <div class="case-stat"><span class="cs-val animate-number" data-target="3">0</span><span class="cs-lbl">Systems unified</span></div>
+                            <div class="case-stat"><span class="cs-val animate-number" data-target="47" data-suffix="%">0%</span><span class="cs-lbl">Faster decisions</span></div>
+                        </div>
+                    </div>
+                    <div class="card case-card">
+                        <span class="case-tag">AI Ecosystem</span>
+                        <h3>Call Intelligence System</h3>
+                        <p>Executive coach closing $500K/year. Every call auto-transcribes, syncs to CRM, creates follow-ups.</p>
+                        <div class="case-stats">
+                            <div class="case-stat"><span class="cs-val animate-number" data-target="12">0</span><span class="cs-lbl">Hrs saved/week</span></div>
+                            <div class="case-stat"><span class="cs-val animate-number" data-target="100" data-suffix="%">0%</span><span class="cs-lbl">Follow-up rate</span></div>
+                        </div>
+                    </div>
+                    <div class="card case-card">
+                        <span class="case-tag">AI Ecosystem</span>
+                        <h3>Lead Recovery Engine</h3>
+                        <p>Med spa losing $9K/month in missed rebookings. Automated follow-ups now capture every opportunity.</p>
+                        <div class="case-stats">
+                            <div class="case-stat"><span class="cs-val">+$114K</span><span class="cs-lbl">Annual revenue</span></div>
+                            <div class="case-stat"><span class="cs-val animate-number" data-target="34" data-suffix="%">0%</span><span class="cs-lbl">More rebookings</span></div>
+                        </div>
+                    </div>
+                    <div class="card case-card">
+                        <span class="case-tag">AI Ecosystem</span>
+                        <h3>Catering Operations Hub</h3>
+                        <p>$2M catering company drowning in quotes. End-to-end automation from inquiry to invoice.</p>
+                        <div class="case-stats">
+                            <div class="case-stat"><span class="cs-val animate-number" data-target="23" data-suffix="%">0%</span><span class="cs-lbl">Revenue increase</span></div>
+                            <div class="case-stat"><span class="cs-val animate-number" data-target="15">0</span><span class="cs-lbl">Hrs saved/week</span></div>
+                        </div>
+                    </div>
+                    <div class="card case-card">
+                        <span class="case-tag">AI Ecosystem</span>
+                        <h3>Fractional CMO Backend</h3>
+                        <p>Marketing consultant managing 8 retainer clients. Zero dropped balls, zero missed check-ins.</p>
+                        <div class="case-stats">
+                            <div class="case-stat"><span class="cs-val animate-number" data-target="2">0</span><span class="cs-lbl">New clients added</span></div>
+                            <div class="case-stat"><span class="cs-val">$0</span><span class="cs-lbl">Churn</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- ════ TOOLS ════ -->
+    <div class="section-white">
+        <div class="inner" style="padding: 56px 0;">
+            <p class="tools-label">Built with the tools that scale</p>
+            <div class="tools-row">
+                <span>n8n</span><span>Make</span><span>Supabase</span><span>Next.js</span><span>OpenAI</span><span>Twilio</span><span>Cal.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════ ABOUT ════ -->
+    <div class="section-navy">
+        <div class="inner">
+            <section>
+                <div class="label">05 &mdash; About</div>
+                <h2 class="section-title">I restructure how businesses operate so they can scale without the chaos.</h2>
+                <p class="section-sub">From $100M+ productions at EA Sports to building custom systems for multi-location businesses. I bring the project management rigor of enterprise teams to the speed and flexibility your business needs.</p>
+                <div class="hero-ctas">
+                    <a href="https://cal.com/formaum/30min" class="btn-primary" target="_blank">Book a Discovery Call</a>
+                    <a href="#work" class="btn-outline">View Project Cases</a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- ════ FAQ ════ -->
+    <div class="section-white">
+        <div class="inner">
+            <section id="faq">
+                <div class="label">06 &mdash; FAQ</div>
+                <h2 class="section-title">Frequently asked questions</h2>
+                <div style="max-width: 680px;">
+                    <div class="faq-item">
+                        <div class="faq-q"><span>Q.</span> Can't I just map this myself?</div>
+                        <div class="faq-a">Sure, but you'll spend 10+ hours researching platforms and still won't know which gaps to fix first. Most businesses have blind spots they can't see from the inside.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q"><span>Q.</span> What if I've already tried mapping my journey?</div>
+                        <div class="faq-a">Great. I'll look at what you've mapped, identify where your assumptions are off, and show you the gaps your team can't see.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q"><span>Q.</span> Do I need to prepare anything?</div>
+                        <div class="faq-a">Not really. Our first call is a conversation, not a presentation. I'll handle the rest.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q"><span>Q.</span> Can I bring team members?</div>
+                        <div class="faq-a">Absolutely. The more perspectives, the richer the mapping. Bring anyone who interacts with customers.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q"><span>Q.</span> Will you recommend tools?</div>
+                        <div class="faq-a">Only what I'd actually recommend. I suggest what you need, not what pays me the highest commission.</div>
+                    </div>
+                </div>
+                <div style="margin-top: 48px;">
+                    <a href="https://cal.com/formaum/30min" class="btn-primary-light" target="_blank">Book a Discovery Call</a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- ════ FOUNDER ════ -->
+    <div class="section-ice">
+        <div class="inner">
+            <section>
+                <div class="label">Founder</div>
+                <div class="founder-row">
+                    <div><span class="f-name">Genevieve Claire</span><br><span class="f-title">Operations Strategist &middot; AI Automation &middot; Full-Stack Engineer</span></div>
+                    <span class="f-badge">Founder &amp; CEO</span>
+                    <a href="https://linkedin.com/in/genevieveclaire" class="f-link" target="_blank">LinkedIn &rarr;</a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- ════ FOOTER ════ -->
+    <div class="section-dark" style="padding: 0 48px;">
+        <div class="footer-inner">
+            <p>&copy; 2026 Formaum, Inc.</p>
+            <a href="https://linkedin.com/in/genevieveclaire" target="_blank">LinkedIn</a>
+        </div>
+    </div>
 
     <script>
-        // Scroll-triggered animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-
-                    // Animate numbers in this section
-                    const numbers = entry.target.querySelectorAll('.animate-number');
-                    numbers.forEach(num => animateNumber(num));
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    e.target.querySelectorAll('.animate-number').forEach(n => animateNum(n));
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
+        document.querySelectorAll('section').forEach(s => observer.observe(s));
 
-        // Number animation
-        function animateNumber(element) {
-            if (element.dataset.animated) return;
-            element.dataset.animated = true;
-
-            const target = parseInt(element.dataset.target);
-            const suffix = element.dataset.suffix || '';
-            const duration = 1500;
-            const start = performance.now();
-
-            function update(currentTime) {
-                const elapsed = currentTime - start;
-                const progress = Math.min(elapsed / duration, 1);
-
-                // Ease out cubic
-                const easeOut = 1 - Math.pow(1 - progress, 3);
-                const current = Math.floor(easeOut * target);
-
-                element.textContent = current + suffix;
-
-                if (progress < 1) {
-                    requestAnimationFrame(update);
-                } else {
-                    element.textContent = target + suffix;
-                }
-            }
-
-            requestAnimationFrame(update);
+        function animateNum(el) {
+            if (el.dataset.done) return;
+            el.dataset.done = '1';
+            const t = parseInt(el.dataset.target), suf = el.dataset.suffix || '', dur = 1400, s = performance.now();
+            (function run(now) {
+                const p = Math.min((now - s) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+                el.textContent = Math.floor(e * t) + suf;
+                p < 1 ? requestAnimationFrame(run) : el.textContent = t + suf;
+            })(s);
         }
 
-        // Parallax effect for floating shapes
-        let ticking = false;
-
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(() => {
-                    const scrolled = window.pageYOffset;
-                    const shapes = document.querySelectorAll('.float-shape');
-
-                    shapes.forEach((shape, index) => {
-                        const speed = 0.05 + (index * 0.02);
-                        const yPos = scrolled * speed;
-                        shape.style.transform = `translateY(${yPos}px)`;
-                    });
-
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                const t = document.querySelector(this.getAttribute('href'));
+                if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
     </script>
+
 </body>
 </html>
