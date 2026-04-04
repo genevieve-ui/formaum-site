@@ -1,0 +1,34 @@
+{
+  "slug": "scope-is-the-product",
+  "title": "Scope Is the Product: Why Protecting the Build Matters More Than the Build Itself",
+  "subtitle": "Every client gets feedback. Not all of it should change the product. Here's how I decide what gets built and what gets parked.",
+  "meta_description": "Why protecting scope matters more than building features. A production manager's approach to client feedback, scope creep, and shipping products that actually land.",
+  "keywords": [
+    "scope management",
+    "scope creep",
+    "client feedback",
+    "product management",
+    "operations strategy",
+    "project delivery",
+    "production management",
+    "MVP development"
+  ],
+  "blog_label": "Operations",
+  "reading_time": "5 min read",
+  "breadcrumb_label": "Scope Is the Product",
+  "content_html": "<p>I turned down a scope change this week.</p><p>Not because it was a bad idea. It was a good idea. The client got feedback from a prospect who'd seen the product, and the feedback was sharp. Redesign the main output page. Make it single-view. Add navigation between sections. New status labels. New data points.</p><p>Smart direction. But it contradicted the brief we'd already delivered against.</p><hr class=\"divider\"><h2>The Pattern</h2><p>This is a pattern I've seen hundreds of times. At EA Sports, working on FIFA with 200+ people and $100M budgets, the same thing happened every sprint. Playtest feedback would land. Marketing would have new direction. Someone would see a competitor's trailer and want to pivot.</p><p>Every piece of feedback was valid. Every suggestion made sense in isolation. But if you chase all of it, you ship nothing.</p><div class=\"pull-quote\"><p>The build was never the hard part. Protecting the build was.</p></div><p>Production management isn't about saying no. It's about knowing when a piece of feedback changes the product and when it changes the schedule. Those are different conversations that need different answers.</p><hr class=\"divider\"><h2>What Actually Happened</h2><p>We'd just completed a milestone. The client approved it. Then two rounds of feedback came in, back to back.</p><p>The first round said: tighten what's there. Sharpen the language. Make the output feel like something a board member would read. Don't add features.</p><p>We built exactly that. Locked in the language system, rewrote the executive summary format, added print-ready styling. Polish, not features.</p><p>Then the second round landed. Single-page layout per risk. Navigation between sections. New status indicators. Impact timing windows. A fundamentally different page architecture.</p><p>Both rounds were good ideas. They just couldn't be the same sprint.</p><hr class=\"divider\"><h2>The Conversation That Matters</h2><p>Most builders would just start building. Inbox gets a message, hands start typing. The client asked for it, so it must be the right thing to do.</p><p>That's how products drift. One round of feedback at a time, each one reasonable, until the thing you're building doesn't look like the thing you agreed to ship.</p><p>So instead of building, I sent a message. Here's the gist:</p><div class=\"callout\"><span class=\"callout-icon\"></span><p>Here's what I can refine within the current build. Here's what would be new scope. And here's why you should decide if this is your vision or one person's preference before we touch anything.</p></div><p>That conversation took five minutes. It saved weeks of rework.</p><hr class=\"divider\"><h2>The Framework</h2><p>When client feedback arrives mid-build, I run it through three questions before touching any code:</p><table class=\"data-table\"><thead><tr><th>Question</th><th>What It Tells You</th></tr></thead><tbody><tr><td>Does this change what we already shipped?</td><td>If yes, it's rework, not iteration. Price it separately.</td></tr><tr><td>Does this contradict the last round of feedback?</td><td>If yes, the vision isn't settled. Don't build on shifting ground.</td></tr><tr><td>Is this the client's direction or someone else's preference?</td><td>Feedback from one prospect is data. It's not a product decision.</td></tr></tbody></table><p>None of these questions say no. They say: let's make sure we're building the right thing before we build anything.</p><hr class=\"divider\"><h2>Why This Matters for the Product</h2><p>The products that actually ship and actually work have one thing in common. At some point, someone said: this is what it is. We're locking it. We're shipping it. Then we'll iterate.</p><p>That discipline is the difference between a product and a prototype that keeps changing shape.</p><p>At EA, we had a phrase for it: feature lock. After a certain date, no new features. Only fixes. The game ships on the date it ships, and everything that didn't make the cut goes into the next release.</p><p>The same principle applies to client work. Lock the scope. Ship the milestone. Get it in front of real users. Then decide what changes based on actual usage, not hypothetical feedback.</p><div class=\"pull-quote\"><p>A shipped product you can iterate on is worth more than a perfect product that never lands.</p></div><hr class=\"divider\"><h2>The Offer I Made Instead</h2><p>I didn't say no to the feedback. I broke it into two categories:</p><p><strong>Refinements I could make now</strong> &mdash; layout adjustments, moving elements around, tightening spacing, adding a status label. All within the existing architecture. Same data, same logic, different presentation.</p><p><strong>New scope</strong> &mdash; single-page view per risk, navigation system, new data points that don't exist yet. A different product shape that needs its own timeline and its own brief.</p><p>The client got both options. No drama. No pushback. Just clarity on what each path costs and what it delivers.</p><p>That's the job. Not just building the thing &mdash; knowing when to say: let's lock this before we lose it.</p>",
+  "faq": [
+    {
+      "q": "How do you handle scope creep without damaging the client relationship?",
+      "a": "Frame it as clarity, not conflict. Show the client what's achievable within the current build and what requires new scope. Most clients appreciate the honesty because it means you're protecting their investment, not just billing hours."
+    },
+    {
+      "q": "What's the difference between iteration and scope creep?",
+      "a": "Iteration improves what was agreed. Scope creep changes what was agreed. If the feedback contradicts the previous round of approved direction, that's scope creep. If it refines within the existing architecture, that's iteration."
+    },
+    {
+      "q": "Should you always push back on client feedback?",
+      "a": "No. Most feedback is valid. The question isn't whether it's a good idea - it's whether it belongs in this sprint. Good feedback that arrives at the wrong time still needs to be parked, not built."
+    }
+  ]
+}
