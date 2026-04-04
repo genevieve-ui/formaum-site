@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Mistakes I See in Every GoHighLevel Migration (And How to Avoid Them Before You Start) | Formaum</title>
+    <meta name="description" content="7 operational mistakes that derail GoHighLevel migrations — from skipping data audits to going live at all locations at once. Real fixes from real builds.">
+    <meta name="keywords" content="GoHighLevel migration mistakes, GHL migration, GoHighLevel setup, GHL CRM migration, GoHighLevel pipeline, GHL automation mistakes, GoHighLevel for multi-location business">
+    <meta property="og:title" content="7 Mistakes I See in Every GoHighLevel Migration (And How to Avoid Them Before You Start)">
+    <meta property="og:description" content="Real mistakes from live migrations — with real consequences. Here’s what I walked into, and what to do instead.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://formaum.com/blog/ghl-migration-mistakes.html">
+    <meta property="article:author" content="Genevieve Claire">
+    <meta property="article:published_time" content="2026-04-03">
+    <link rel="canonical" href="https://formaum.com/blog/ghl-migration-mistakes.html">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "7 Mistakes I See in Every GoHighLevel Migration (And How to Avoid Them Before You Start)",
+        "author": {
+            "@type": "Person",
+            "name": "Genevieve Claire",
+            "jobTitle": "Operations Strategist",
+            "url": "https://formaum.com",
+            "sameAs": ["https://linkedin.com/in/genevieveclaire"]
+        },
+        "publisher": { "@type": "Organization", "name": "Formaum", "url": "https://formaum.com" },
+        "datePublished": "2026-04-03",
+        "dateModified": "2026-04-03",
+        "description": "7 operational mistakes that derail GoHighLevel migrations — from skipping data audits to going live at all locations at once. Real fixes from real builds.",
+        "mainEntityOfPage": "https://formaum.com/blog/ghl-migration-mistakes.html",
+        "keywords": ["GoHighLevel migration mistakes", "GHL migration", "GoHighLevel setup", "GHL CRM migration", "GoHighLevel pipeline", "GHL automation mistakes", "GoHighLevel for multi-location business"],
+        "articleSection": "GHL Migration"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://formaum.com" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://formaum.com/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "GHL Migration Mistakes" }
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{"@type":"Question","name":"How long does a GoHighLevel migration actually take?","acceptedAnswer":{"@type":"Answer","text":"For a single location with clean data, four to six weeks is realistic. Add complexity for each additional location, each intake path, and any data remediation work. Five-location builds typically run eight to twelve weeks when done correctly."}},{"@type":"Question","name":"Can I migrate my entire business into GHL?","acceptedAnswer":{"@type":"Answer","text":"You can try. I’d recommend against it. GHL is built for lead capture, follow-up, pipeline management, and appointment booking. It’s not an HR system, billing platform, or ops wiki."}},{"@type":"Question","name":"What happens if my CRM data is a mess?","acceptedAnswer":{"@type":"Answer","text":"You run a data audit first and find out exactly how much of a mess. Field completeness below 60%? That data gets dropped or goes into a remediation plan before migration starts."}},{"@type":"Question","name":"Do I need separate sub-accounts for each location?","acceptedAnswer":{"@type":"Answer","text":"It depends on your reporting and access control requirements. Separate sub-accounts give each location its own clean environment and make it easier to isolate issues during rollout."}},{"@type":"Question","name":"What’s the first thing to build in GHL?","acceptedAnswer":{"@type":"Answer","text":"Pipeline stages and custom fields — in that order. Not automations. Not forms. The pipeline architecture is the foundation everything else sits on."}}]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --navy-deep: #0D1B2A; --navy: #1B2D45; --navy-mid: #243B55; --slate: #34506B;
+            --blue-accent: #4A8FD4; --blue-light: #6AADDD;
+            --warm-white: #FAF9F6; --cream: #F3F1EC; --ice: #EDF2F8; --ice-blue: #E4EBF5;
+            --text-dark: #0D1B2A; --text-body: #2A3E55; --text-muted: #6B819A;
+            --text-light: #F0EDE8; --text-light-muted: rgba(240, 237, 232, 0.6);
+            --red-soft: #E74C3C; --green-soft: #2ECC71;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; font-weight: 400; color: var(--text-dark); line-height: 1.6; background: var(--warm-white); -webkit-font-smoothing: antialiased; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 400; letter-spacing: -0.5px; line-height: 1.15; }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; background: rgba(13, 27, 42, 0.92); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .logo { font-size: 18px; font-weight: 500; color: var(--text-light); text-decoration: none; letter-spacing: -0.5px; }
+        .nav-right { display: flex; align-items: center; gap: 28px; }
+        .nav-link { font-size: 13px; color: var(--text-light-muted); text-decoration: none; transition: color 0.3s; }
+        .nav-link:hover { color: var(--text-light); }
+        .nav-cta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px; color: var(--navy-deep); background: var(--blue-accent); padding: 10px 22px; border-radius: 4px; text-decoration: none; transition: all 0.3s; }
+        .nav-cta:hover { background: var(--blue-light); }
+        .breadcrumb { max-width: 720px; margin: 0 auto; padding: 100px 48px 0; }
+        .breadcrumb a, .breadcrumb span { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--blue-light); text-decoration: none; letter-spacing: 1px; }
+        .breadcrumb span.sep { margin: 0 8px; opacity: 0.4; }
+        .breadcrumb span.current { color: var(--text-light-muted); }
+        .blog-hero { background: var(--navy-deep); color: var(--text-light); padding: 24px 48px 80px; }
+        .blog-hero .inner { max-width: 720px; margin: 0 auto; }
+        .blog-meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: var(--blue-light); margin-bottom: 20px; font-weight: 500; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+        .blog-meta .reading-time { color: var(--text-light-muted); }
+        .blog-hero h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.2; margin-bottom: 24px; font-weight: 400; }
+        .blog-hero .blog-subtitle { font-size: 16px; line-height: 1.7; color: rgba(240, 237, 232, 0.7); max-width: 600px; }
+        .blog-content { max-width: 720px; margin: 0 auto; padding: 64px 48px 100px; }
+        .blog-content p { font-size: 16px; line-height: 1.8; color: var(--text-body); margin-bottom: 24px; }
+        .blog-content h2 { font-size: 22px; margin-top: 56px; margin-bottom: 20px; color: var(--text-dark); font-weight: 500; }
+        .blog-content strong { font-weight: 600; color: var(--text-dark); }
+        .blog-content em { font-style: italic; color: var(--text-muted); }
+        .divider { border: none; margin: 56px 0; height: 3px; background: linear-gradient(90deg, var(--blue-accent) 0%, var(--ice-blue) 50%, transparent 100%); border-radius: 2px; }
+        .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 40px 0; }
+        .stat-box { background: var(--ice); border-radius: 8px; padding: 28px 20px; text-align: center; border-top: 3px solid var(--blue-accent); }
+        .stat-box .num { font-family: 'IBM Plex Mono', monospace; font-size: 32px; font-weight: 500; color: var(--blue-accent); display: block; margin-bottom: 4px; }
+        .stat-box .label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.2px; font-weight: 500; }
+        .pull-quote { border-left: 4px solid var(--blue-accent); background: var(--ice); padding: 28px 32px; margin: 40px 0; border-radius: 0 8px 8px 0; }
+        .pull-quote p { font-size: 18px; font-weight: 500; color: var(--navy); margin: 0; line-height: 1.5; }
+        .pull-quote .cite { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 12px; display: block; }
+        .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 40px 0; }
+        .ba-card { border-radius: 8px; padding: 28px 24px; }
+        .ba-card.before { background: var(--navy-deep); color: var(--text-light); }
+        .ba-card.after { background: var(--ice); color: var(--text-dark); border: 2px solid var(--blue-accent); }
+        .ba-card .ba-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+        .ba-card.before .ba-label { color: var(--red-soft); }
+        .ba-card.after .ba-label { color: var(--green-soft); }
+        .ba-card .ba-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+        .ba-card.before .ba-dot { background: var(--red-soft); }
+        .ba-card.after .ba-dot { background: var(--green-soft); }
+        .ba-card ul { list-style: none; padding: 0; }
+        .ba-card ul li { font-size: 14px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.08); line-height: 1.5; }
+        .ba-card.after ul li { border-bottom: 1px solid var(--ice-blue); }
+        .ba-card ul li:last-child { border-bottom: none; }
+        .ba-card.before ul li { color: rgba(240, 237, 232, 0.8); }
+        .callout { background: var(--cream); border-radius: 8px; padding: 24px 28px; margin: 32px 0; display: flex; gap: 16px; align-items: flex-start; }
+        .callout-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+        .callout p { margin: 0; font-size: 14px; line-height: 1.7; color: var(--text-body); }
+        .callout strong { color: var(--text-dark); }
+        .timeline { margin: 40px 0; padding: 0; }
+        .tl-step { display: flex; gap: 20px; margin-bottom: 0; position: relative; }
+        .tl-marker { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+        .tl-dot { width: 36px; height: 36px; border-radius: 50%; background: var(--navy-deep); color: var(--text-light); display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; }
+        .tl-line { width: 2px; flex-grow: 1; background: var(--ice-blue); min-height: 24px; }
+        .tl-content { padding: 6px 0 32px; }
+        .tl-content h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; color: var(--text-dark); }
+        .tl-content p { font-size: 14px; color: var(--text-muted); margin: 0; line-height: 1.6; }
+        .tl-step:last-child .tl-line { display: none; }
+        .tl-step:last-child .tl-content { padding-bottom: 0; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 14px; border-radius: 8px; overflow: hidden; }
+        .data-table th { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-light); text-align: left; padding: 14px 16px; background: var(--navy-deep); font-weight: 500; }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid var(--ice); color: var(--text-body); }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:nth-child(even) { background: var(--ice); }
+        .pipeline-wrap { background: var(--navy-deep); border-radius: 12px; padding: 32px; margin: 40px 0; overflow-x: auto; }
+        .pipeline-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--blue-light); margin-bottom: 16px; }
+        .pipeline-flow { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+        .pipeline-stage { font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: var(--navy-mid); color: var(--text-light); padding: 8px 12px; border-radius: 4px; white-space: nowrap; border: 1px solid rgba(74, 143, 212, 0.2); }
+        .pipeline-arrow { color: var(--blue-accent); font-size: 12px; }
+        .faq-section { margin-top: 56px; }
+        .faq-item { border-bottom: 1px solid var(--ice-blue); padding: 20px 0; }
+        .faq-q { font-size: 15px; font-weight: 600; color: var(--text-dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-q::after { content: '+'; font-family: 'IBM Plex Mono', monospace; font-size: 18px; color: var(--blue-accent); transition: transform 0.2s; }
+        .faq-item.open .faq-q::after { content: '\2212'; }
+        .faq-a { font-size: 14px; color: var(--text-body); line-height: 1.7; padding-top: 12px; display: none; }
+        .faq-item.open .faq-a { display: block; }
+        .author-card { display: flex; gap: 20px; align-items: center; background: var(--ice); border-radius: 12px; padding: 28px; margin-top: 48px; }
+        .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--navy-deep); color: var(--blue-accent); display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 20px; font-weight: 600; flex-shrink: 0; }
+        .author-info h4 { font-size: 15px; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; }
+        .author-info p { font-size: 13px; color: var(--text-muted); margin: 0; line-height: 1.6; }
+        .author-info a { color: var(--blue-accent); text-decoration: none; font-weight: 500; }
+        .blog-cta { background: var(--navy-deep); border-radius: 12px; padding: 48px 40px; margin: 56px 0 0; text-align: center; }
+        .blog-cta h3 { color: var(--text-light); font-size: 22px; font-weight: 400; margin-bottom: 12px; }
+        .blog-cta p { color: rgba(240, 237, 232, 0.7); font-size: 15px; margin-bottom: 28px; }
+        .btn-primary { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px; color: var(--navy-deep); background: var(--blue-accent); padding: 14px 32px; border-radius: 4px; text-decoration: none; transition: all 0.3s; display: inline-block; }
+        .btn-primary:hover { background: var(--blue-light); }
+        .footer { background: var(--navy-deep); padding: 32px 48px; border-top: 1px solid rgba(255,255,255,0.06); }
+        .footer-inner { max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .footer-inner p { font-size: 13px; color: var(--text-light-muted); }
+        .footer-inner a { font-size: 13px; color: var(--text-light-muted); text-decoration: none; }
+        .footer-inner a:hover { color: var(--text-light); }
+        @media (max-width: 768px) {
+            nav { padding: 16px 24px; }
+            .breadcrumb { padding: 100px 24px 0; }
+            .blog-hero { padding: 24px 24px 60px; }
+            .blog-content { padding: 48px 24px 80px; }
+            .stat-row { grid-template-columns: 1fr; }
+            .ba-grid { grid-template-columns: 1fr; }
+            .pipeline-wrap { padding: 20px; }
+            .pipeline-flow { flex-direction: column; }
+            .pipeline-arrow { transform: rotate(90deg); }
+            .author-card { flex-direction: column; text-align: center; }
+            .footer { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="logo">Formaum</a>
+        <div class="nav-right">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/blog/" class="nav-link">Blog</a>
+            <a href="https://cal.com/formaum/45" class="nav-cta" target="_blank">Book a Call</a>
+        </div>
+    </nav>
+
+    <div class="blog-hero">
+        <div class="breadcrumb">
+            <a href="/">Home</a><span class="sep">/</span>
+            <a href="/blog/">Blog</a><span class="sep">/</span>
+            <span class="current">GHL Migration Mistakes</span>
+        </div>
+        <div class="inner" style="padding-top: 32px;">
+            <div class="blog-meta">
+                <span>GHL Migration</span>
+                <span class="reading-time">6 min read</span>
+            </div>
+            <h1>7 Mistakes I See in Every GoHighLevel Migration (And How to Avoid Them Before You Start)</h1>
+            <p class="blog-subtitle">Real mistakes from live migrations — with real consequences. Here’s what I walked into, and what to do instead.</p>
+        </div>
+    </div>
+
+    <div class="blog-content">
+
+<p>I’ve built GHL migrations for multi-location businesses. Every one has the same friction points — not because the clients aren’t smart, but because nobody tells you the operational specifics before you start. So here they are.</p>
+
+<hr class="divider">
+
+<h2>Mistake #1: Trying to migrate everything</h2>
+
+<p>GHL is a lead and follow-up system. It’s not your HR platform. It’s not your billing tool. It’s not your ops wiki.</p>
+
+<p>The first thing I do on any migration is draw a hard line: lead funnel moves. Everything else stays. The clients who try to centralize their entire business into GHL on day one end up with a bloated sub-account, confused staff, and a migration that takes three times as long.</p>
+
+<div class="callout"><span class="callout-icon">⚠️</span><p>Scope it to: lead capture, pipeline stages, follow-up sequences, appointment booking, and basic reporting. Full stop. Ops, HR, and billing are a different conversation — and usually a different tool.</p></div>
+
+<h2>Mistake #2: Skipping the data audit</h2>
+
+<p>One client handed me a CRM export. 97 columns. I ran a completeness check — most fields were empty or populated with junk data. The "Lead Source" field, which they wanted to use for segmentation, returned null for every single record.</p>
+
+<p>You cannot build meaningful automations on bad data. You cannot segment a list that was never properly tagged. And you cannot fix it after the fact without burning hours cleaning records one by one.</p>
+
+<div class="pull-quote"><p>The data audit isn’t optional. It’s the thing that tells you what you’re actually working with — before you build anything.</p></div>
+
+<p>Before I touch a single GHL setting, I pull the export, run field-level completeness checks, and flag every column that’s less than 60% populated. Anything below that threshold either gets dropped or goes into a remediation plan. Non-negotiable.</p>
+
+<h2>Mistake #3: Building automations before pipeline architecture</h2>
+
+<p>This one kills timelines. Someone gets excited about workflows — the automations are visual, they’re satisfying to build — and they start there. Then two weeks later, the pipeline stages change. The custom fields get renamed. And every workflow they built has to be rebuilt from scratch.</p>
+
+<p>The order matters:</p>
+
+<div class="ba-grid"><div class="ba-card before"><div class="ba-label"><span class="ba-dot"></span> Wrong Order</div><ul><li>Build workflows first</li><li>Realize stages are wrong</li><li>Rebuild everything</li></ul></div><div class="ba-card after"><div class="ba-label"><span class="ba-dot"></span> Right Order</div><ul><li>Define pipeline stages</li><li>Set custom fields</li><li>Then build automations on top</li></ul></div></div>
+
+<p>Stages and fields are the foundation. Automations are the roof. Don’t put the roof up first.</p>
+
+<h2>Mistake #4: Going live at all locations simultaneously</h2>
+
+<p>Five locations. One launch day. What could go wrong?</p>
+
+<p>Everything. Staff at location 3 can’t log in. Location 5’s intake form is routing to the wrong pipeline. Location 1 is getting duplicate contacts because their old form wasn’t turned off. And you’re getting five simultaneous fires with no bandwidth to fight any of them.</p>
+
+<div class="stat-row"><div class="stat-box"><span class="num">1</span><span class="label">Pilot location first</span></div><div class="stat-box"><span class="num">2wks</span><span class="label">Prove it works</span></div><div class="stat-box"><span class="num">Then</span><span class="label">Roll to others</span></div></div>
+
+<p>Run the pilot for two weeks minimum. Let it break in a controlled environment. Fix what breaks. Then roll to the next location with a documented runbook — not a wing and a prayer.</p>
+
+<h2>Mistake #5: Copy-pasting the old follow-up sequence into the new system</h2>
+
+<p>The follow-up sequence from the old CRM worked fine — for the old CRM. It was written for a different system, a different context, and a different point in the customer journey.</p>
+
+<p>Here’s what I walked into on one build: Day 0 and Day 1 SMS messages were word-for-word identical. The post-visit email opened with: <em>"This is an automated message from [Business Name]."</em></p>
+
+<div class="callout"><span class="callout-icon">🚫</span><p>Copy-pasting is not a migration strategy. It’s a shortcut that ships broken copy with a new tool’s name on it.</p></div>
+
+<p>Every sequence gets rewritten for GHL. That means: unique message per day, human-sounding SMS, no "this is an automated message" openers, and a clear action in every touchpoint. The old sequences are reference material — not source files.</p>
+
+<h2>Mistake #6: Ignoring intake path complexity</h2>
+
+<p>Multi-location businesses don’t have one intake path. They have several — website form, phone call, walk-in, referral, ad click. Each one behaves differently. Each one needs different routing logic.</p>
+
+<p>One client had three distinct intake paths per location. Five locations. That’s 15 configurations — each requiring its own form, routing rule, and pipeline entry point. Nobody scoped that upfront. It surfaced in week three.</p>
+
+<table class="data-table"><thead><tr><th>Intake Path</th><th>Routing Logic</th><th>Pipeline Entry</th></tr></thead><tbody><tr><td>Website form</td><td>Auto-assign by location field</td><td>New Lead — Web</td></tr><tr><td>Phone inquiry</td><td>Manual entry by staff</td><td>New Lead — Phone</td></tr><tr><td>Walk-in / referral</td><td>Staff-triggered workflow</td><td>New Lead — Referral</td></tr></tbody></table>
+
+<p>Map every intake path before you build anything. Count the configurations. If you have multiple locations, multiply accordingly. That number belongs in the scope document — not as a surprise in week three.</p>
+
+<h2>Mistake #7: No attribution setup on day one</h2>
+
+<p>One client was spending $3,000–$7,000 per month on ads. No UTM parameters. No campaign field in the CRM. No way to connect a lead to the ad that generated it.</p>
+
+<p>They had been running ads for eight months. They had no idea which campaigns were working.</p>
+
+<div class="pull-quote"><p>Attribution isn’t a reporting feature. It’s the thing that tells you whether the $5K you spent last month was worth it.</p></div>
+
+<p>Day one of any migration includes: UTM parameter setup on all ad traffic, a Campaign Source custom field in GHL, and a workflow that writes the source to the contact record on creation. It takes two hours. It’s the difference between knowing your numbers and guessing at them.</p>
+
+<hr class="divider">
+
+<h2>The pattern</h2>
+
+<p>Every one of these mistakes has the same root cause: starting to build before the foundation is scoped. Data audited. Intake paths mapped. Pipeline architecture defined. Attribution wired in.</p>
+
+<p>GHL is a powerful system. It’s also easy to build the wrong thing in it very quickly. The pre-work isn’t overhead — it’s what separates a migration that works from one you rebuild six weeks later.</p>
+
+<div class="callout"><span class="callout-icon">📋</span><p>If you’re planning a GHL migration and want to know what you’re actually walking into — I do a paid audit before any build. It maps your current tools, your intake paths, your data quality, and your scope. No surprises mid-project.</p></div>
+
+
+        <hr class="divider">
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item open">
+                <div class="faq-q">How long does a GoHighLevel migration actually take?</div>
+                <div class="faq-a">For a single location with clean data, four to six weeks is realistic. Add complexity for each additional location, each intake path, and any data remediation work. Five-location builds typically run eight to twelve weeks when done correctly.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Can I migrate my entire business into GHL?</div>
+                <div class="faq-a">You can try. I’d recommend against it. GHL is built for lead capture, follow-up, pipeline management, and appointment booking. It’s not an HR system, billing platform, or ops wiki.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">What happens if my CRM data is a mess?</div>
+                <div class="faq-a">You run a data audit first and find out exactly how much of a mess. Field completeness below 60%? That data gets dropped or goes into a remediation plan before migration starts.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Do I need separate sub-accounts for each location?</div>
+                <div class="faq-a">It depends on your reporting and access control requirements. Separate sub-accounts give each location its own clean environment and make it easier to isolate issues during rollout.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">What’s the first thing to build in GHL?</div>
+                <div class="faq-a">Pipeline stages and custom fields — in that order. Not automations. Not forms. The pipeline architecture is the foundation everything else sits on.</div>
+            </div>
+        </div>
+
+        <div class="blog-cta">
+            <h3>Running on a stack that grew by accident?</h3>
+            <p>Tools added one at a time, never architected together. That's the problem I solve. Book 45 minutes and I'll map what moves, what stays, and what makes sense for your operation.</p>
+            <a href="https://cal.com/formaum/45" class="btn-primary" target="_blank">Book a Discovery Call</a>
+        </div>
+
+        <div class="author-card">
+            <div class="author-avatar">GC</div>
+            <div class="author-info">
+                <h4>Genevieve Claire</h4>
+                <p>Operations strategist. Previously EA Sports FIFA &mdash; $100M productions, $7B franchise. Now I build operations infrastructure for multi-location businesses. <a href="https://linkedin.com/in/genevieveclaire" target="_blank">LinkedIn &rarr;</a></p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="footer-inner">
+            <p>&copy; 2026 Formaum, Inc.</p>
+            <a href="https://linkedin.com/in/genevieveclaire" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-q').forEach(q => {
+            q.addEventListener('click', () => {
+                q.parentElement.classList.toggle('open');
+            });
+        });
+    </script>
+
+</body>
+</html>

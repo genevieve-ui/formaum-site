@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Formaum - Operations Infrastructure for Multi-Location Businesses</title>
+    <meta name="description" content="Practitioner insights on CRM migrations, GoHighLevel, franchise operations, and building systems that replace manual processes. By Genevieve Claire.">
+    <meta property="og:title" content="Blog | Formaum">
+    <meta property="og:description" content="CRM migrations, franchise operations, and systems that work. Practitioner-authored.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://formaum.com/blog/">
+    <link rel="canonical" href="https://formaum.com/blog/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --navy-deep: #0D1B2A; --navy: #1B2D45; --navy-mid: #243B55;
+            --blue-accent: #4A8FD4; --blue-light: #6AADDD;
+            --warm-white: #FAF9F6; --cream: #F3F1EC; --ice: #EDF2F8; --ice-blue: #E4EBF5;
+            --text-dark: #0D1B2A; --text-body: #2A3E55; --text-muted: #6B819A;
+            --text-light: #F0EDE8; --text-light-muted: rgba(240, 237, 232, 0.6);
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; font-weight: 400; color: var(--text-dark); line-height: 1.6; background: var(--warm-white); -webkit-font-smoothing: antialiased; }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; background: rgba(13, 27, 42, 0.92); backdrop-filter: blur(24px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .logo { font-size: 18px; font-weight: 500; color: var(--text-light); text-decoration: none; letter-spacing: -0.5px; }
+        .nav-right { display: flex; align-items: center; gap: 28px; }
+        .nav-link { font-size: 13px; color: var(--text-light-muted); text-decoration: none; transition: color 0.3s; }
+        .nav-link:hover { color: var(--text-light); }
+        .nav-cta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px; color: var(--navy-deep); background: var(--blue-accent); padding: 10px 22px; border-radius: 4px; text-decoration: none; transition: all 0.3s; }
+        .nav-cta:hover { background: var(--blue-light); }
+        .hero { background: var(--navy-deep); color: var(--text-light); padding: 140px 48px 80px; }
+        .hero .inner { max-width: 720px; margin: 0 auto; }
+        .hero .label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: var(--blue-light); margin-bottom: 20px; }
+        .hero h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 400; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 16px; }
+        .hero p { font-size: 16px; color: rgba(240, 237, 232, 0.7); max-width: 560px; }
+        .posts { max-width: 720px; margin: 0 auto; padding: 64px 48px 100px; }
+        .post-card { display: block; text-decoration: none; padding: 32px 0; border-bottom: 1px solid var(--ice-blue); transition: all 0.2s; }
+        .post-card:first-child { padding-top: 0; }
+        .post-card:hover { padding-left: 12px; }
+        .post-tag { font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--blue-accent); margin-bottom: 8px; display: inline-block; }
+        .post-card h2 { font-size: 20px; font-weight: 500; color: var(--text-dark); margin-bottom: 8px; letter-spacing: -0.3px; line-height: 1.3; }
+        .post-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+        .post-meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--text-muted); margin-top: 8px; }
+        .footer { background: var(--navy-deep); padding: 32px 48px; border-top: 1px solid rgba(255,255,255,0.06); }
+        .footer-inner { max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .footer-inner p { font-size: 13px; color: var(--text-light-muted); }
+        .footer-inner a { font-size: 13px; color: var(--text-light-muted); text-decoration: none; }
+        @media (max-width: 768px) {
+            nav { padding: 16px 24px; }
+            .hero { padding: 120px 24px 60px; }
+            .posts { padding: 48px 24px 80px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo">Formaum</a>
+        <div class="nav-right">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/blog/" class="nav-link">Blog</a>
+            <a href="https://cal.com/formaum/45" class="nav-cta" target="_blank">Book a Call</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="inner">
+            <div class="label">Blog</div>
+            <h1>Operations infrastructure, from the inside</h1>
+            <p>Practitioner insights on CRM migrations, franchise operations, and building systems that replace manual processes.</p>
+        </div>
+    </div>
+
+    <div class="posts">
+
+        <a href="/blog/monday-to-ghl-migration.html" class="post-card">
+            <span class="post-tag">GHL Migration</span>
+            <h2>Monday.com to GoHighLevel: What Actually Moves, What Stays, and How to Sequence a Multi-Location Rollout</h2>
+            <p>Inside a live franchise migration. 97 columns mapped. 10 tools consolidated into one.</p>
+            <div class="post-meta">8 min read</div>
+        </a>
+
+        <a href="/blog/fragmented-stack-cost.html" class="post-card">
+            <span class="post-tag">Operations</span>
+            <h2>The Real Cost of a Fragmented Stack: What 5 Tools Actually Cost a Franchise Per Location Per Year</h2>
+            <p>The software line item is the smallest number. The real cost is the labor filling gaps between disconnected tools.</p>
+            <div class="post-meta">7 min read</div>
+        </a>
+
+        <a href="/blog/ghl-migration-mistakes.html" class="post-card">
+            <span class="post-tag">GHL Migration</span>
+            <h2>7 Mistakes I See in Every GoHighLevel Migration (And How to Avoid Them Before You Start)</h2>
+            <p>Real mistakes from live migrations with real consequences. Not generic advice.</p>
+            <div class="post-meta">6 min read</div>
+        </a>
+
+        <a href="/blog/what-ghl-does-not-replace.html" class="post-card">
+            <span class="post-tag">GHL Migration</span>
+            <h2>What GoHighLevel Does NOT Replace (And What to Keep)</h2>
+            <p>Everyone lists what GHL can do. Nobody talks about what it shouldn't touch.</p>
+            <div class="post-meta">6 min read</div>
+        </a>
+
+        <a href="/blog/hubspot-to-ghl.html" class="post-card">
+            <span class="post-tag">GHL Migration</span>
+            <h2>HubSpot to GoHighLevel: When HubSpot Is Overkill for Your Franchise</h2>
+            <p>You're paying enterprise prices for a tool built for enterprise teams.</p>
+            <div class="post-meta">5 min read</div>
+        </a>
+
+        <a href="/blog/salesforce-to-ghl.html" class="post-card">
+            <span class="post-tag">GHL Migration</span>
+            <h2>Salesforce to GoHighLevel: The Case for Downsizing Your CRM</h2>
+            <p>Salesforce is built for enterprise sales teams with dedicated admins. Most franchises don't have that.</p>
+            <div class="post-meta">6 min read</div>
+        </a>
+
+        <a href="/blog/pilot-first-ghl-migration.html" class="post-card">
+            <span class="post-tag">GHL Migration</span>
+            <h2>How to Pilot a GHL Migration at One Location Before Rolling to Five</h2>
+            <p>The pilot-first playbook. Why you never launch all locations at once.</p>
+            <div class="post-meta">6 min read</div>
+        </a>
+
+        <a href="/blog/follow-up-sequence-revenue-leak.html" class="post-card">
+            <span class="post-tag">Operations</span>
+            <h2>Why Your Follow-Up Sequence Is Losing You $700K/Year (With Real Numbers)</h2>
+            <p>A real audit. Real math. The gap between first contact and conversion is where most businesses bleed out.</p>
+            <div class="post-meta">6 min read</div>
+        </a>
+
+        <a href="/blog/follow-up-gap.html" class="post-card">
+            <span class="post-tag">Operations</span>
+            <h2>The 2-5 Day Follow-Up Gap: Where Franchise Leads Go to Die</h2>
+            <p>Decisions happen in 24-48 hours. A 2-5 day gap means you're reaching out after they've already signed.</p>
+            <div class="post-meta">4 min read</div>
+        </a>
+
+        <a href="/blog/ai-personalized-outreach-franchise.html" class="post-card">
+            <span class="post-tag">AI + Operations</span>
+            <h2>What AI-Personalized Outreach Actually Looks Like in a Franchise CRM</h2>
+            <p>Not a chatbot. Not a mail merge. The real implementation.</p>
+            <div class="post-meta">5 min read</div>
+        </a>
+
+    </div>
+
+    <div class="footer">
+        <div class="footer-inner">
+            <p>&copy; 2026 Formaum, Inc.</p>
+            <a href="https://linkedin.com/in/genevieveclaire" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+</body>
+</html>
